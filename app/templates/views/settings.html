@@ -1,0 +1,14 @@
+ion-view
+  ion-header-bar.bar-positive(align-title='center')
+    button.button.button-icon.icon.ion-navicon(menu-toggle='left')  
+    h1.title Settings  
+    ion-content
+      .list
+        // connect toggles to controller using ng-model
+        ion-toggle
+          span.settings-item__text
+            | Allow Push Notifications            
+        ion-toggle
+          span.settings-item__text
+            | Allow cookies
+

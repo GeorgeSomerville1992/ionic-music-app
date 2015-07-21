@@ -1,0 +1,24 @@
+<ion-view>
+  <ion-header-bar align-title="center" class="bar-positive">
+  <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+      <h1 class="title">musicAPp</h1>
+  </ion-header-bar>
+  <ion-content class="padding">
+      <div class="list list-inset">
+        <label class="item item-input">
+          <input type="text" placeholder="Username" ng-model="user.email">
+        </label>
+        <label class="item item-input">
+            <input type="password" placeholder="Password" ng-model="user.password">
+        </label>
+      </div>
+      <button class="button button-block button-positive" ng-click="login(user)">Login</button>
+      <button class="button button-block button-positive" ui-sref="app.register">register</button>
+
+            <button class="button" ng-click="play('http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3')"> Play from internet</button>
+      
+      <a href="#" class="btn large" ng-click="playMedia('http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3');">Play Audio</a>
+
+
+  </ion-content>
+</ion-view>
