@@ -1,0 +1,12 @@
+ion-view
+  ion-header-bar.bar-positive(align-title='center')
+    button.button.button-icon.icon.ion-navicon(menu-toggle='left')
+    h1.title musicAPp
+  ion-content
+    .content(ng-bind-html='myHTML')
+    .bar.bar-header.bar-light
+      h1.title Ionic music app
+    a.button.button-full.button-positive(ui-sref='app.login')
+      | login
+    button.button.button-full.button-assertive(ui-sref='app.register')
+      | register

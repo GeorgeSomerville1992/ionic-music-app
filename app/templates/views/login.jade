@@ -1,0 +1,12 @@
+ion-view
+  ion-header-bar.bar-positive(align-title='center')
+    button.button.button-icon.icon.ion-navicon(menu-toggle='left')
+    h1.title musicAPp
+  ion-content.padding
+    .list.list-inset
+      label.item.item-input
+        input(type='text', placeholder='Username', ng-model='user.email')
+      label.item.item-input
+        input(type='password', placeholder='Password', ng-model='user.password')
+    button.button.button-block.button-positive(ng-click='login(user)') Login
+    button.button.button-block.button-positive(ui-sref='app.register') register

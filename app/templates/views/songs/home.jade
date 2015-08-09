@@ -1,0 +1,11 @@
+ion-view
+  ion-header-bar.bar-positive(align-title='center')
+    button.button.button-icon.icon.ion-navicon(menu-toggle='left')
+    h1.title musicAPp
+  ion-content
+    div(ng-repeat='song in songs')
+      h1  {{song.name}}
+      audio(controls='controls')
+        source(ng-src='{{trustSrc(song.preview_url)}}', type='audio/mpeg')
+      |     h1 {{song.$id}}
+      a(ui-sref='app.songShow({songId:song.$id})') show song

@@ -152,7 +152,6 @@ var paths = {
 };
 
 gulp.task( 'jade', function (done) {
-  console.log('runnign jade!')
   gulp.src('app/templates/**/*.jade')
     .pipe( jade() )
     .pipe( gulp.dest(path.join(targetDir, 'templates')))
@@ -160,12 +159,12 @@ gulp.task( 'jade', function (done) {
 });
 
 // copy templates
-gulp.task('templates', function() {
-  return gulp.src('app/templates/**/*.*')
-    .pipe(gulp.dest(path.join(targetDir, 'templates')))
+// gulp.task('templates', function() {
+//   return gulp.src('app/templates/**/*.*')
+//     .pipe(gulp.dest(path.join(targetDir, 'templates')))
 
-    .on('error', errorHandler);
-});
+//     .on('error', errorHandler);
+// });
 
 // generate iconfont
 gulp.task('iconfont', function(){
@@ -313,7 +312,6 @@ gulp.task('ripple', ['scripts', 'styles', 'watchers'], function() {
 gulp.task('watchers', function() {
   plugins.livereload.listen();
   gulp.watch('app/styles/**/*.scss', ['styles']);
-  gulp.watch('app/templates/views/songs/*jade')
   gulp.watch('app/fonts/**', ['fonts']);
   gulp.watch('app/icons/**', ['iconfont']);
   gulp.watch('app/images/**', ['images']);
@@ -336,7 +334,6 @@ gulp.task('default', function(done) {
     'iconfont',
     [
       'fonts',
-      'templates',
       'styles',
       'jade',
       'images',

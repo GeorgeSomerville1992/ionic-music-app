@@ -1,0 +1,10 @@
+ion-view(view-title='register', name='register-view')
+  ion-content.padding
+    .list.list-inset
+      label.item.item-input.item-stacked-label
+        span.input-label Email
+        input(type='text', placeholder='email', ng-model='user.email')
+      label.item.item-input.item-stacked-label
+        span.input-label Password
+        input(type='password', placeholder='Password', ng-model='user.password')
+    button.button.button-block.button-positive(ng-click='register(user)') register
