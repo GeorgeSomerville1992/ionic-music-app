@@ -15,6 +15,7 @@ var streamqueue = require('streamqueue');
 var runSequence = require('run-sequence');
 var merge = require('merge-stream');
 var ripple = require('ripple-emulator');
+var jade = require( 'gulp-jade' );
 
 /**
  * Parse arguments
@@ -145,6 +146,18 @@ gulp.task('fonts', function() {
     .on('error', errorHandler);
 });
 
+var paths = {
+  sass: ['./scss/**/*.scss'],
+  jade: ['./jade/**/*.jade']
+};
+
+gulp.task( 'jade', function (done) {
+  console.log('runnign jade!')
+  gulp.src('app/templates/**/*.jade')
+    .pipe( jade() )
+    .pipe( gulp.dest(path.join(targetDir, 'templates')))
+    .on( 'end', done );
+});
 
 // copy templates
 gulp.task('templates', function() {
@@ -300,6 +313,7 @@ gulp.task('ripple', ['scripts', 'styles', 'watchers'], function() {
 gulp.task('watchers', function() {
   plugins.livereload.listen();
   gulp.watch('app/styles/**/*.scss', ['styles']);
+  gulp.watch('app/templates/views/songs/*jade')
   gulp.watch('app/fonts/**', ['fonts']);
   gulp.watch('app/icons/**', ['iconfont']);
   gulp.watch('app/images/**', ['images']);
@@ -324,6 +338,7 @@ gulp.task('default', function(done) {
       'fonts',
       'templates',
       'styles',
+      'jade',
       'images',
       'vendor'
     ],

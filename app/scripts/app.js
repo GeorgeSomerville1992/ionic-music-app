@@ -98,7 +98,7 @@ angular.module('MusicAPp', ['ionic', 'ngCordova', 'ngResource', 'firebase','spot
         cache: true,
         views: {
           'viewContent': {
-            templateUrl: 'templates/views/songs/create.html',
+            templateUrl: 'templates/views/songs/createTest.html',
             controller: 'SongCreateCtrl'
           }
         },
