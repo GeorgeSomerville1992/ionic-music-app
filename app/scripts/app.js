@@ -38,6 +38,8 @@ angular.module('MusicAPp', ['ionic', 'ngCordova', 'ngResource', 'firebase','spot
     // $httpProvider.interceptors.push('interceptor-name');
 
     // Application routing
+    // todo -> add resolve into function. 
+
     $stateProvider
       .state('app', {
         url: '/app',
@@ -73,7 +75,7 @@ angular.module('MusicAPp', ['ionic', 'ngCordova', 'ngResource', 'firebase','spot
             templateUrl: 'templates/views/register.html',
             controller: 'RegisterCtrl'
           }
-        }
+        },
       })
       .state('app.profile', {
         url: '/profile',
@@ -82,6 +84,11 @@ angular.module('MusicAPp', ['ionic', 'ngCordova', 'ngResource', 'firebase','spot
           'viewContent': {
             templateUrl: 'templates/views/profile.html',
             controller: 'ProfileController'
+          }
+        },
+        resolve:{
+          user: function(FirebaseAuthenticate) {
+            return FirebaseAuthenticate.checkState();
           }
         }
       })
@@ -92,7 +99,12 @@ angular.module('MusicAPp', ['ionic', 'ngCordova', 'ngResource', 'firebase','spot
         views: {
           'viewContent': {
             templateUrl: 'templates/views/songs/create.html',
-            controller: 'SongCreateCtrlh'
+            controller: 'SongCreateCtrl'
+          }
+        },
+        resolve:{
+          user: function(FirebaseAuthenticate) {
+            return FirebaseAuthenticate.checkState();
           }
         }
       })
@@ -104,6 +116,11 @@ angular.module('MusicAPp', ['ionic', 'ngCordova', 'ngResource', 'firebase','spot
             templateUrl: 'templates/views/songs/home.html',
             controller: 'SongsCtrl'
           }
+        },
+        resolve:{
+          user: function(FirebaseAuthenticate) {
+            return FirebaseAuthenticate.checkState();
+          }
         }
       })
       .state('app.songShow', {
@@ -114,11 +131,13 @@ angular.module('MusicAPp', ['ionic', 'ngCordova', 'ngResource', 'firebase','spot
             templateUrl: 'templates/views/songs/show.html',
             controller: 'SongCtrl'
           }
+        },
+        resolve:{
+          user: function(FirebaseAuthenticate) {
+            return FirebaseAuthenticate.checkState();
+          }
         }
       })
-
-
-
       .state('app.settings', {
         url: '/settings',
         cache: true,

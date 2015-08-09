@@ -51,6 +51,7 @@ angular.module('MusicAPp')
       },
       logout: function(){
         ref.unauth()
+        $location.path('/home')
       },
       checkState: function(){
         var authData = ref.getAuth();

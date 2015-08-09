@@ -5,15 +5,17 @@
     </ion-header-bar>
 
     <ion-content>
-        <ion-refresher
-            pulling-text="Pull to refresh..."
-            on-refresh="fetchRandomText()">
-        </ion-refresher>
-        <div class="loader" ng-if="!myHTML">
-            <ion-spinner></ion-spinner>
-        </div>
-        <div class="content" ng-bind-html="myHTML">
-        </div>
+      <div class="content" ng-bind-html="myHTML">
+      </div>
+      <div class="bar bar-header bar-light">
+        <h1 class="title">Ionic music app</h1>
+      </div>
+      <a class="button button-full button-positive" ui-sref="app.login">
+        login
+      </a>
+      <button class="button button-full button-assertive" ui-sref='app.register'>
+        register
+      </button>
     </ion-content>
 
 </ion-view>
