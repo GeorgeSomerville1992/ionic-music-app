@@ -5,6 +5,7 @@ ion-view
   ion-content
     div(ng-repeat='song in songs')
       h1  {{song.name}}
+      h1 created by : {{song.createdBy}}
       audio(controls='controls')
         source(ng-src='{{trustSrc(song.preview_url)}}', type='audio/mpeg')
       |     h1 {{song.$id}}

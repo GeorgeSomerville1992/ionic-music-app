@@ -1,7 +1,7 @@
 'use strict';
  
 angular.module('MusicAPp')
-  .controller('RegisterCtrl', ['$scope', '$state', '$ionicPopup', 'AuthService', '$firebaseAuth', 'FirebaseAuthenticate',  function($scope, $state, $ionicPopup, AuthService, $firebaseAuth, FirebaseAuthenticate) {
+  .controller('RegisterCtrl', ['$scope', '$state', '$ionicPopup', '$firebaseAuth', 'FirebaseAuthenticate',  function($scope, $state, $ionicPopup, $firebaseAuth, FirebaseAuthenticate) {
     $scope.user = {
       email:'' ,
       password: ''

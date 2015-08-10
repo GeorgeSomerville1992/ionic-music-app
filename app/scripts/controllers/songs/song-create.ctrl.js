@@ -1,6 +1,6 @@
 'use strict'
 angular.module('MusicAPp')
-  .controller('SongCreateCtrl',['$scope', '$ionicLoading', '$cordovaMedia', '$state', '$sce', '$ionicSideMenuDelegate', '$ionicPlatform', 'Spotify', 'Song', function($scope, $ionicLoading, $cordovaMedia, $state, $sce, $ionicSideMenuDelegate, $ionicPlatform, Spotify, Song) {
+  .controller('SongCreateCtrl',['$scope', '$ionicLoading', '$cordovaMedia', '$state', '$sce', '$ionicSideMenuDelegate', '$ionicPlatform', 'Spotify', 'Song', 'user', function($scope, $ionicLoading, $cordovaMedia, $state, $sce, $ionicSideMenuDelegate, $ionicPlatform, Spotify, Song, user) {
     $scope.getSongs = function(song){
       console.log('song', song)
       Spotify.search(song.name, 'track').then(function(data){
@@ -23,6 +23,7 @@ angular.module('MusicAPp')
     $scope.submitSong = function (song) {
       console.log(song)
       $scope.song = {url: 'http://', 'title': ''};
+      song.createdBy = user.password.email
       Song.create(song).then(function () {
         $scope.songResults = ''
         // $scope.post = {url: 'http://', 'title': ''};

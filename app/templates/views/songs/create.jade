@@ -14,7 +14,6 @@ ion-view
         span.input-label Album artwork
         input(type='text', ng-model='song.album')
       button.button.button-full.button-dark(ng-click='getSongs(song)') get songs
-    button.button(ng-click="play('http://www.stephaniequinn.com/Music/Allegro%20from%20Duet%20in%20C%20Major.mp3')")  Play from internet
     .card(ng-repeat='song in songResults.items')
       .item.item-text-wrap {{song.name}}
       .item.item-image

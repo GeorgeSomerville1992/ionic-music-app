@@ -4,4 +4,16 @@ ion-view
     h1.title musicAPp
   ion-content
     h1  this is my profile controller 
+    .list
+      label.item.item-input.item-stacked-label
+        span.input-label Profile Name
+        input(type='text', ng-model='profile.name')
+      label.item.item-input.item-stacked-label
+        span.input-label Bio
+        input(type='text', ng-model='profile.bio')
+      label.item.item-input.item-stacked-label
+        span.input-label theme
+        input(type='text', ng-model='profile.theme')
+      button.button.button-full.button-dark(ng-click='updateProfile(profile)') update
+
     a.button.button-block.button-calm(menu-close='', ui-sref-active='active', ui-sref='app.songCreate')  songs

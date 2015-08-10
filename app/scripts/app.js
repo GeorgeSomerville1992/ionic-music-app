@@ -10,7 +10,7 @@
  */
 
 
-angular.module('MusicAPp', ['ionic', 'ngCordova', 'ngResource', 'firebase','spotify', 'ngSanitize'])
+angular.module('MusicAPp', ['ionic', 'ngCordova', 'ngResource', 'firebase','spotify', 'ngSanitize', 'MusicAPp.directives'])
   .constant('FIREBASE_URL', 'https://ionic-music-app.firebaseio.com/')
   .constant('USER_ROLES', {
     admin: 'admin_role',
@@ -68,7 +68,7 @@ angular.module('MusicAPp', ['ionic', 'ngCordova', 'ngResource', 'firebase','spot
         }
       })
       .state('app.register', {
-        url:'/song',
+        url:'/register',
         cache: true,
         views:{
           'viewContent': {
