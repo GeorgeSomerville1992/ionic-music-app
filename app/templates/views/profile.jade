@@ -1,9 +1,8 @@
 ion-view
-  ion-header-bar.bar-positive(align-title='center')
+  ion-header-bar.bar-pink(align-title='center')
     button.button.button-icon.icon.ion-navicon(menu-toggle='left')
     h1.title musicAPp
   ion-content
-    h1  this is my profile controller 
     .list
       label.item.item-input.item-stacked-label
         span.input-label Profile Name
@@ -14,6 +13,7 @@ ion-view
       label.item.item-input.item-stacked-label
         span.input-label theme
         input(type='text', ng-model='profile.theme')
-      button.button.button-full.button-dark(ng-click='updateProfile(profile)') update
+      button.button.button-full.btn-magenta(ng-click='updateProfile(profile)') update
 
-    a.button.button-block.button-calm(menu-close='', ui-sref-active='active', ui-sref='app.songCreate')  songs
+    a.button.button-block.btn-magenta.megenta-secondary(menu-close='', ui-sref-active='active', ui-sref='app.songCreate') songs
+

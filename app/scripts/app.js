@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 
-
+angular.module('MusicAPp.directives', []);
 angular.module('MusicAPp', ['ionic', 'ngCordova', 'ngResource', 'firebase','spotify', 'ngSanitize', 'MusicAPp.directives'])
   .constant('FIREBASE_URL', 'https://ionic-music-app.firebaseio.com/')
   .constant('USER_ROLES', {

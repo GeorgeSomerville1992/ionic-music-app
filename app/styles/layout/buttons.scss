@@ -1,0 +1,29 @@
+.btn-rounded{
+  
+};
+$magentaRed:#D5425D;
+$primaryWhite: white;
+.btn-magenta{
+  display:block;
+  width:100%;
+  background-color: $magentaRed;
+  &:hover{
+    background-color: darken( $magentaRed, 10% )
+  }
+  font-family: ProximaNovaLight !important;
+  font-size: 21px;
+  border-radius: 5px;
+  &:disabled{
+    background-color: lighten( $magentaRed, 10% )
+  }
+  &:hover:disabled{
+    background-color: lighten( $magentaRed, 10% )
+  }
+};
+
+
+.megenta-secondary{
+  background-color: $primaryWhite;
+  color: $magentaRed;
+  border: 2px solid $magentaRed;
+};
